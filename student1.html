@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Student Form</title>
+   <style>
+    table,th,tr,td{
+        border: 2px solid black;
+        
+    }
+    body{
+        background-color: aliceblue;
+    }
+    #bt1{
+        color: white;
+        background-color: rgb(220, 30, 30);
+    }
+    #bt2{
+        color: white;
+        background-color: blue;
+        border: none;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+    #f{
+    
+            max-width: 400px;
+            max-height: auto;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+    }input[type="text"],
+        input[type="number"],
+        input[type="email"] {
+            width: 100%;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #f5ebeb;
+            border-radius: 3px;
+        }
+
+    #d{
+        max-width: 400px;
+            max-height: auto;
+            margin: 0 auto;
+            margin-top: 5px;
+            padding: 20px;
+            background-color:rgb(240, 244, 243);
+            
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    }
+        
+        
+   </style>
+</head>
+<body>
+    
+    <div id="f">
+   <h3 align="center">Student Form</h3>
+    
+            Name: <input type="text" id="name"><br>
+            Age: <input type="number" id="age"><br>
+            Gender: <input type="radio" name="gender" value="Male" checked> Male
+            <input type="radio" name="gender" value="Female"> Female<br>
+            Course: <input type="text" id="course"><br>
+            E-mail: <input type="email" id="email"><br>
+            <button id="bt2" onclick="addStudent()">Save</button>
+    </div>
+
+    <div id="d" align="center">
+    <h3>Student details</h3>
+    <table id="table" align="center">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </table>
+ </div>
+
+
+
+    <script>
+        function addStudent()
+        {
+            var name=document.getElementById("name").value;
+            var age=document.getElementById("age").value;
+            var gender=document.querySelector('input[name="gender"]:checked').value;
+            var course=document.getElementById("course").value;
+            var email=document.getElementById("email").value;
+
+            var table=document.getElementById("table");
+            var row=table.insertRow(-1);
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            var cell3=row.insertCell(2);
+            var cell4=row.insertCell(3);
+            var cell5=row.insertCell(4);
+            var cell6=row.insertCell(5);
+
+            cell1.innerHTML=name;
+            cell2.innerHTML=age;
+            cell3.innerHTML=gender;
+            cell4.innerHTML=course;
+            cell5.innerHTML=email;
+            cell6.innerHTML="<button id='bt1' onclick='deleteRow(this)'> Delete</button>";
+        }
+        function deleteRow(btn)
+        {
+            var row=btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+        
+    
+
+</script>
+    
+</body>
+</html>
