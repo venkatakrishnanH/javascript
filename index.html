@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSky</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1 align="center">Book Store</h1>
+    </div>
+    <div class="container">
+        <div class="book_container">
+            <h2 class="h2">Life Quotes</h2>
+            <h5>― William W. Purkey</h5>
+            <p>“You've gotta dance like there's nobody watching,
+                Love like you'll never be hurt,
+                Sing like there's nobody listening,
+                And live like it's heaven on earth.”</p>
+            <button class="bt1" onclick="remove(event)">Delete</button>
+           
+        </div>   
+    </div>
+    <div class="popup"></div>
+    <div class="addbook">
+        <h2>Add Book</h2>
+        <form>
+            <input type="text" placeholder="Book_Title" id="Book_Title">
+            <input type="text" placeholder="Book_Author" id="Book_Author">
+            <textarea id="Book_description" placeholder="Description" ></textarea>
+            <button id="add">Add</button>
+            <button id="cancel">Cancel</button>
+        </form>
+    </div>
+    <button class="add_button">+</button>
+    <script src="script.js"></script>
+</body>
+</html>
